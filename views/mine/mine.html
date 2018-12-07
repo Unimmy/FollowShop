@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="author" contect=""> 
+	<title>个人中心</title>
+	<link href="../../lib/mui/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
+	<script src="../../js/common/calcSize.js" type="text/javascript" charset="utf-8"></script>
+	<link href="../../css/mine/mine.css" rel="stylesheet" />
+	<script src="../../lib/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../../lib/mui/mui.min.js"></script>
+	<script src="../../lib/vue/vue.min.js"></script>
+	<body>
+		<!--html-->
+		<div id="app">
+			<div class="" id="pullrefresh">
+				<div class="">
+					<div class="mui-content">
+						<div class="mui-scroll">
+							<div class="contentDiv">
+								<!--头部-->
+								<div class="mineHeader">
+									<div class="minHLeft">
+										<div class="left uploadImg" @tap="turnTo('revisingPersonal','revisingPersonal');">
+											<img :src="infos.imgUrl" id="imgUrl_h" alt="" />
+										</div>
+										<div class="right">
+											<p class="userName">{{userName}}</p>
+											<p class ="integral"><span>积分：{{goldcoin}}分</span></p>
+										</div>
+									</div>
+									<div class="minHRight">
+										<!--<img @tap="turnTo('barcode','barcode')" src="../../img/mine/saoyisao.png" alt="" />-->
+										<!--<img v-if="clerk == true" @tap="turnTo('../../lib/qrcode/qrcode','qrcode');" src="../../img/mine/erweima.png" alt="" />-->
+										<!--二维码改动所有人都有自己的二维码-->
+										<img @tap="turnTo('../../lib/qrcode/qrcode','qrcode');" src="../../img/mine/erweima.png" alt="" />
+									</div>				
+								
+									<div></div>
+								</div>
+								
+							
+								
+								<!--我的订单-->
+								<div class="myOrder">
+									<dl @tap="turnTo('myOrder/myOrder','myOrder','1','1');">
+										<dt><img src="../../img/mine/daizhifu.png"/></dt>
+										<dd>待付款</dd>
+									</dl>
+									<dl @tap="turnTo('myOrder/myOrder','myOrder','2','1');">
+										<dt><img src="../../img/mine/daifahuo.png"/></dt>
+										<dd>待发货</dd>
+									</dl>
+									<dl @tap="turnTo('myOrder/myOrder','myOrder','3','1');" class="bornone">
+										<dt><img src="../../img/mine/daishouhuo.png"/></dt>
+										<dd>待收货</dd>
+									</dl>
+									<dl @tap="turnTo('myOrder/myOrder','myOrder','4','1');">
+										<dt><img src="../../img/mine/yiwancheng.png"/></dt>
+										<dd>已完成</dd>
+									</dl>
+									<dl @tap="turnTo('address/address','address');">
+										<dt><img src="../../img/mine/wodedizhi.png"/></dt>
+										<dd>我的地址</dd>
+									</dl>
+									<dl @tap="turnTo('accountSecurity/accountSecurity','accountSecurity')" class="bornone">
+										<dt><img src="../../img/mine/zhanghuyuanquan.png"/></dt>
+										<dd>账户与安全</dd>
+									</dl>
+									<dl @tap="turnTo('feedback','feedback')" class="borbot">
+										<dt><img src="../../img/mine/yijinafankui.png"/></dt>
+										<dd>意见反馈</dd>
+									</dl>
+									<dl @tap="turnTo('setting','setting','clickClose')" style="position: absolute; width:1.5rem;height:1.5rem; top:0px;z-index:999;right:0rem;border:0 !important;padding-left:0.1rem">
+										<dt><img src="../../img/mine/shezhi.png"/></dt>
+									</dl>
+									
+									<dl @tap="turnTo('myCollection','myCollection')"  class="borbot">
+										<dt><img src="../../img/mine/shoucangkongxin.png"/></dt>
+										<dd>收藏列表</dd>
+									</dl>
+									<dl @tap="turnTo('myCoupon','myCoupon','0','')" class="bornone borbot">
+										<dt><img src="../../img/mine/youhuiquan.png"/></dt>
+										<dd>优惠券</dd>
+									</dl>
+								</div>
+								
+								<!--充值有礼-->
+								<!--<div class="goRecharge">
+									<div class="top">
+										<h5>充值有礼</h5>
+									</div>
+									<p>
+										<img src="../../img/mine/500.png" alt="" />
+									</p>
+									<p>
+										<img src="../../img/mine/1000.png"/>
+									</p>
+									<div class="goRecBtn">立即充值</div>
+								</div>-->
+								
+								<!--我的服务-->
+								<!--<div class="myService">
+									<div class="top">
+										<h5>我的服务</h5>
+									</div>
+									<dl @tap="turnTo('address/address','address');">
+										<dt><img src="../../img/mine/wodedizhi.png"/></dt>
+										<dd>我的地址</dd>
+									</dl>
+									<dl @tap="turnTo('accountSecurity/accountSecurity','accountSecurity')">
+										<dt><img src="../../img/mine/zhanghuyuanquan.png"/></dt>
+										<dd>账户与安全</dd>
+									</dl>
+									<dl @tap="turnTo('feedback','feedback')">
+										<dt><img src="../../img/mine/yijinafankui.png"/></dt>
+										<dd>意见反馈</dd>
+									</dl>
+									<dl @tap="turnTo('setting','setting','clickClose')">
+										<dt><img src="../../img/mine/shezhi.png"/></dt>
+										<dd>设置</dd>
+									</dl>
+									
+									<dl @tap="turnTo('myCollection','myCollection')">
+										<dt><img src="../../img/mine/shoucangkongxin.png"/></dt>
+										<dd>收藏列表</dd>
+									</dl>
+									<dl @tap="turnTo('myCoupon','myCoupon','0','')">
+										<dt><img src="../../img/mine/youhuiquan.png"/></dt>
+										<dd>优惠券</dd>
+									</dl>
+								</div>-->
+								<!--我的经营-->
+								<div v-if="clerk == true" class="myService myCooperate">
+									<div class="top">
+										<h5>我的经营</h5>
+									</div>
+									<dl v-if="clerk == true" @tap="turnTo('shopGuide/customerList','customerList')">
+										<dt><img src="../../img/mine/kehuliebiao.png"/></dt>
+										<dd>客户列表</dd>
+									</dl>
+									<dl v-if="clerk == true" @tap="turnTo('myOrder/myOrder','myOrder','0','2')">
+										<dt><img src="../../img/mine/kehudingdan.png"/></dt>
+										<dd>客户订单</dd>
+									</dl>
+									<dl v-if="clerk == true" @tap="turnTo('shopGuide/myCommission','myCommission')" class="bornone" >
+										<dt><img src="../../img/mine/wodexiaoshou.png"/></dt>
+										<dd>我的佣金</dd>
+									</dl>
+									<dl v-if="clerk == true" @tap="turnTo('shopGuide/commissionExpressive','commissionExpressive')"  class="borbot">
+										<dt><img src="../../img/mine/tixian.png"/></dt>
+										<dd>佣金提现</dd>
+									</dl> 
+									<dl v-if="clerk == true" @tap="turnTo('shopGuide/cashAccountManagement','cashAccountManagement')" class="borbot">
+										<dt><img src="../../img/mine/tixianguanli.png"/></dt>
+										<dd>提现账户管理</dd>
+									</dl>
+									<dl v-if="clerk == true"  class="borbot bornone" style="padding-top:.9rem">
+										<dd>敬请期待</dd>
+									</dl>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>	
+		</div>
+		<!--script-->
+		<script src="../../js/common/common.js"></script>
+		<script src="../../js/mine/mine.js"></script>
+	</body>
+
+</html>
