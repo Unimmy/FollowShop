@@ -46,7 +46,7 @@
 								<span v-if="!shopPrice && isActivity != 1 && infos.num.MINPRICE!=infos.num.MAXPRICE" class="leftMoney">￥{{infos.num.MINPRICE}}~{{infos.num.MAXPRICE}}</span>
 								<span v-if="!shopPrice && isActivity != 1 && infos.num.MINPRICE==infos.num.MAXPRICE" class="leftMoney">￥{{infos.num.MINPRICE}}</span>
 								<span v-if="isActivity == 1" class="leftMoney">￥{{surePrice.price1}} <i class="oldMoneyss">￥{{surePrice.price}}</i></span>
-								<span class="rightSell">库存{{infos.num.NUM}}份</span>					
+								<span class="rightSell">已售{{infos.commodity[0].SALESIZE}}&nbsp;&nbsp;库存{{infos.num.NUM}}份</span>	
 							</div>
 						</div>	
 						<ul class="choose">

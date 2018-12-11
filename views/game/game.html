@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="author" contect="[{name:liuhui,contact:402714516@qq.com},{name:lugang,contact:604616579@qq.com}]"> 
+    <title></title>	
+    <link href="../../lib/mui/mui.min.css" rel="stylesheet"/>
+  	<link href="../../lib/swiper3/swiper.min.css" rel="stylesheet">
+  	<link href="../../css/common.css" rel="stylesheet"/>
+  	<link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="../../js/common/calcSize.js"></script>
+   	<script src="EventUtil.js"></script>
+    <script src="../../lib/jquery/jquery-3.2.1.min.js"></script>
+    <script src="../../lib/mui/mui.min.js"></script>
+    <script src="../../lib/vue/vue.min.js"></script>
+     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+	<body>
+		<!--html-->
+	<div id="app">	
+			<div id="my2048">
+				    <header id="head">
+				        <h1 class="text-center text-primary title">2048</h1>
+				    </header>
+				    <div id="score" class="score row">
+				        <div class="score text-center col-md-8 col-xs-8" style="display: inline-block">
+				            Score: <span id="score_value">0</span>&emsp;&emsp;Best: <span id="best_value">0</span>
+				        </div>
+				        <button id="new_game" class=" col-md-4 col-xs-4 btn btn-primary">New Game</button>
+				    </div>
+				    <div id="game-body" class="text-center">
+				    </div>
+				</div>
+			</div>
+		<!--script-->
+		<script src="../../js/common/common.js"></script>
+		 <script src="init.js"></script>
+		
+	</body>
+</html>

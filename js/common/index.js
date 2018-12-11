@@ -3,7 +3,7 @@
 	var $j = jQuery.noConflict(true);		
 	var Index=0;
 	//把子页的路径写在数组里面
-	var subpages = ['views/homePage/homeIndex.html','views/classification/classification.html','views/shoppingCart/shoppingCart.html','views/mine/mine.html'];
+	var subpages = ['views/homePage/homeIndex.html','views/game/game.html','views/shoppingCart/shoppingCart.html','views/mine/mine.html'];
 	//所有的plus-*方法写在mui.plusReady中或者后面。
 	mui.plusReady(function() {
 		//获取当前页面所属的Webview窗口对象
@@ -41,7 +41,7 @@
 			if (targetTab == activeTab) {
 				return false;
 			}
-			if(targetTab != 'views/homePage/homeIndex.html' && targetTab != 'views/classification/classification.html' && localStorage.memberId == '' || localStorage.memberId == undefined){
+			if(targetTab != 'views/homePage/homeIndex.html' && targetTab != 'views/game/game.html' && localStorage.memberId == '' || localStorage.memberId == undefined){
 				plus.webview.open('views/loginRegister/login.html?neet=1','login');
 				return false;
 			}

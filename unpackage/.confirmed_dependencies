@@ -36,7 +36,8 @@
       "views/loginRegister/login.html",
       "views/shoppingCart/shoppingCart.html",
       "views/classification/classification.html",
-      "views/mine/mine.html"
+      "views/mine/mine.html",
+      "views/game/game.html"
     ]
   },
   "views/daidai/ddIndex.html": {
