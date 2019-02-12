@@ -8,9 +8,12 @@
 	<link rel="stylesheet" type="text/css" href="../../css/common.css"/>
 	<script src="../../js/common/calcSize.js" type="text/javascript" charset="utf-8"></script>
 	<link href="../../css/shoppingCart/shopSettlement.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="../../lib/swiper3/swiper.min.css"/>
 	<script src="../../lib/jquery/jquery-3.2.1.min.js"></script>
 	<script src="../../lib/mui/mui.min.js"></script>
 	<script src="../../lib/vue/vue.min.js"></script>
+	<script src="../../lib/swiper3/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	
 	<body>
 		<!--html-->
 		<div id="app" v-cloak>
@@ -18,6 +21,17 @@
 				<h1 class="mui-title">确认信息</h1>
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			</header>
+			<div class="bottomdiv">	
+				<div class="bottomdivchild">
+					<span @tap="showCards('cancle')">取消选择</span>
+					<span @tap="showCards('ok')">确认选择</span>
+				</div>
+				<div v-for="(item,index) in cards" class="showcards" >
+					<div class="img"></div>
+				 	<img src="../../img/mine/500.png" alt=""  @tap="getcardID(''+item.id+'',''+index+'')" v-if="item.lei_xing =='2'"/>
+				 	<img src="../../img/mine/1000.png" alt="" @tap="getcardID(''+item.id+'',''+index+'')" v-if="item.lei_xing =='1'"/>
+				 </div>
+			</div>
 			<div class="mui-content mui-scroll-wrapper">
 				<div class="mui-scroll">
 					<div v-for="(i,index) in infos" class="message">
@@ -55,12 +69,17 @@
 									无可用红包<i class="arrow_right"></i>
 								</p>
 							</li>-->
-							<li v-if="couponShow==true" @click="goShopCoupon(i);" style="position:relative;">
+							<li v-if="couponShow==true" @tap="goShopCoupon(i);" style="position:relative;">
 								<p style="float:left;" class="left">优惠券</p>
 								<p :class="i.onephone" style="margin-left:0.2rem;width:80%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap"></p>
 								<p :class="'num'+i.onephone" class="couponIdA" style="display:none;"></p>
 								<input type="text" :class="'numbera'+i.onephone" class="numberaA" style="display:none;"/>
 								<p :class="'oneone'+i.onephone" class="oneA" style="display:none;"></p>
+								<span class="rightImg"></span>
+							</li>
+							<li v-if="couponShow==true" @tap="showCards()" style="position:relative;">
+								<p style="float:left;" class="left">选择优惠卡卷</p>
+								<input v-model="message" :value="message" class="numberaB" disabled/>
 								<span class="rightImg"></span>
 							</li>
 							<li>
@@ -70,7 +89,6 @@
 							</li>
 						</ul>
 					</div>
-					
 					<div class="list-box">
 						<ul>
 							<li v-if="modelId == 2 && addressIsTrue==0" style="padding: 0.1rem 0.25rem 0;border-bottom: 1px solid #bebebe;height: 0.7rem;line-height: 0.5rem;font-size: 0.26rem;">收货地址：</li>

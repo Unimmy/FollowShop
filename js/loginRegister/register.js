@@ -52,7 +52,7 @@
 				strs.forEach(function(v,k){
 					Obj[v.split("=")[0]]=decodeURI(v.split("=")[1]); 
 				});
-				console.log(Obj.dataType);
+//				console.log(Obj.dataType);
 				if(Obj.dataType == 'weixin'){
 					this.isWxChart = 1;
 				}else{

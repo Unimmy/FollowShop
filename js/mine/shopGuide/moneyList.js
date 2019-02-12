@@ -110,8 +110,8 @@
 				pullRefresh: {
 					container: '#pullrefresh',
 					down: {
-						style: 'circle',
-						color:' #ed7196',
+						style:'circle',
+						color:'#ed7196',
 						offset: '44px',
 						contentdown: "下拉可以刷新", //可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
 						contentover: "释放立即刷新", //可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容

@@ -55,14 +55,20 @@
 							</p>-->
 							<!--广告大图可跳转详情-->
 							<div class="bigImgTodetails">
-								<p class="toImg" @tap="turnToX(''+item.url+'','commodityDetails',''+item.pagekey+'')" v-for="(item,index) in topBelow" :style="{backgroundImage:'url('+server+item.path+')'}"></p>
+							<!--<p class="toImg" @tap="turnToX(''+item.url+'','commodityDetails',''+item.pagekey+'')" v-for="(item,index) in topBelow" :style="{backgroundImage:'url('+server+item.path+')'}"></p>-->
+							<p class="toImg" @tap="turnToX('advertguid','commodityDetails',''+item.pagekey+'')" v-for="(item,index) in topBelow" :style="{backgroundImage:'url('+server+item.path+')'}"></p>
 							</div>
 							<!--商品-->
 							<div class="shopsDiv" v-for="(item,index) in shops">
 								<p @tap="turnTo('homeList','homeList',''+item.mk+'')" class="topTitle">{{item.mk}}</p>
 								<div class="products">
 									<dl v-for="(i,index) in item.listmap" @tap="portrait(''+i.COMMODITYKEYID+'');" class="shopps">
-										<dt><img v-bind:src="server+i.MAINIMAGE"/></dt>
+										<dt>
+											<img v-bind:src="server+i.MAINIMAGE"/>
+											<p class="seconds" v-if="i.MS=='1'">限时秒杀</p>
+											<p class="seconds" v-if="i.YS=='1'">限时预售</p>
+											<p class="seconds" v-if="i.PDD=='1'">限时拼团</p>
+										</dt>
 										<dd> 
 											<p>{{i.NAME}}</p> 
 											<span class="priceNew">￥{{i.PRICE}}</span><span v-if="i.ORIGINALPRICE!='' && i.ORIGINALPRICE!=i.PRICE && i.ORIGINALPRICE!=null &&i.ORIGINALPRICE!=undefined " class="oldMoney">￥{{i.ORIGINALPRICE}}</span>

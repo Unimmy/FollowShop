@@ -55,7 +55,7 @@
 						plus.webview.currentWebview().close();
 					}else{
 						mui.confirm('是否退出应用',function(e){
-					   		if (e.index == 0) {
+					   		if (e.index == 1) {
 	                      		plus.runtime.quit();
 	                    	}	
 					   	},'div')
@@ -111,11 +111,7 @@
 							localStorage.memberId = r.data.id;
 							localStorage.bindPhone = r.data.phone;
 							localStorage.memberLoginSize = r.data.membersize;
-							if(r.data.mShop){
-								localStorage.shopId = r.data.mShop.id;
-							}else{
-								console.log(222);
-							}
+							if(r.data.mShop){localStorage.shopId = r.data.mShop.id;}
 							var mine = plus.webview.getWebviewById('views/mine/mine.html');
 							var home = plus.webview.getWebviewById('views/homePage/homeIndex.html');
 							var classification = plus.webview.getWebviewById('views/classification/classification.html');

@@ -1,0 +1,59 @@
+#header{
+	/*border-bottom:1px solid #E5E5E5 !important;*/
+}
+.contentDiv{
+	padding:0.2rem;
+	position:relative;
+	background: #ED7196;
+	padding-top:0;
+}
+#header{
+	background:  #ed7196;
+}
+#header .mui-title,#header .mui-icon{
+	color:#FFFFFF;
+}
+.bottomdiv{
+	margin: 0 auto;
+	height: 10rem;
+	width:100%;
+	border-radius: 0.2rem;
+	background: #FFFFFF;
+	padding: 0.1rem;
+	position: relative;
+}
+ .shareMyticket{
+ 	position: absolute;
+ 	top:7rem;
+ 	left:50%;
+ 	margin:-40%;
+	text-align: center;
+	width:80%;
+	border:1px solid #ED7196;
+	height:1rem;
+	line-height: 1rem;
+	color:#ED7196;
+	border-radius:0.1rem
+}
+.ticketopen{
+ 	position: absolute;
+ 	top:8.5rem;
+ 	left:50%;
+ 	margin:-40%;
+	text-align: center;
+	width:80%;
+	border:1px solid #ED7196;
+	height:1rem;
+	line-height: 1rem;
+	color:#ED7196;
+	border-radius:0.1rem
+}
+.contentDiv div{
+	position:relative;
+}
+#id{
+	position: absolute;
+	top:1.5rem;
+	right:-.5rem;
+	color:#FFFFFF;transform: rotate(90deg);
+}

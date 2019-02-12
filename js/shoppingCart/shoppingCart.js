@@ -378,7 +378,7 @@
 			pickWeek:function(){
 				//plus.nativeUI.showWaiting();
 				NetUtil.ajax('/commodity/selectBySelect',{
-//					rows:12
+					rows:12,
 					type:1
 				},function(r){
 //					plus.nativeUI.closeWaiting();

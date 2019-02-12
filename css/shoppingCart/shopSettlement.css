@@ -186,6 +186,13 @@ html,body, .mui-bar-nav~.mui-content{
 	background-size:0.3rem;
 	vertical-align:-0.17rem;
 }
+.payMethod .cardpay .leftImg{
+	background:url(../../img/shoppingCart/kapianzhifu.png) no-repeat center;
+	width:0.5rem;
+	height:0.5rem;
+	background-size:0.3rem;
+	vertical-align:-0.17rem;
+}
 .goPay{
 	width:100%;
 	height:0.8rem;
@@ -193,7 +200,7 @@ html,body, .mui-bar-nav~.mui-content{
 	background:#FFFFFF;
 	color:#FFFFFF;
 	position:absolute;
-	bottom:0;
+	bottom:0rem;
 	left:0;
 	z-index:99;
 }
@@ -249,8 +256,72 @@ html,body, .mui-bar-nav~.mui-content{
 	font-size:0.22rem;
 	color:red;
 }
-
-
 [v-cloak]{
 	display:none !important;
+}
+.bottomdiv{
+	position: absolute;
+	background:rgba(255,255,255,1);
+	height:0;
+	width:100%;
+	bottom:0rem;
+	z-index:10;
+	transition: all .1s linear;
+	overflow:auto;
+}
+.showcards{
+	position:relative;
+}
+.showcards img{
+	width:100%;
+}
+.showcards .img{
+	position: absolute;
+	top:0.1rem;
+	right: 0.1rem;
+	width:0.3rem;
+	height:0.3rem;
+	border-radius:50%;
+}
+.bottomdivchild{
+	width:100%;
+	text-align: center;
+	position: fixed;
+	top:3.5rem;
+	background: rgba(0,0,0,0.6);
+	display:none;
+}
+.bottomdivchild span:first-child{
+	display: inline-block;
+	width:1.2rem;
+	text-align: center;
+	border: 1px solid #ED7196;
+	color:#ED7196;
+	margin:0.2rem;
+	line-height: .5rem;
+	height: .5rem;
+	border-radius:0.1rem;
+	float: left;
+}
+.bottomdivchild span:last-child{
+	display: inline-block;
+	width:1.2rem;
+	text-align: center;
+	background: #ED7196;
+	color:#ffffff;
+	margin:0.2rem;
+	line-height: .5rem;
+	height: .5rem;
+	border-radius:0.1rem;
+	float: right;
+}
+.numberaB{
+	float: right;
+	height: 0.7rem;
+	color:#ED7196;
+	font-size:.25rem;
+	width:1.8rem;
+	border:none;
+	background: transparent;
+	padding-right:.1rem;
 }

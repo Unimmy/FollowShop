@@ -44,11 +44,12 @@
 					var all = plus.webview.all();
 					var index = plus.webview.getWebviewById('index.html').id;
 					var wsHome = plus.webview.getWebviewById('views/homePage/homeIndex.html').id;
-					var wsClassification = plus.webview.getWebviewById('views/classification/classification.html').id;
+//					var wsClassification = plus.webview.getWebviewById('views/classification/classification.html').id;
 					var wsShoppingCart = plus.webview.getWebviewById('views/shoppingCart/shoppingCart.html').id;
 					var wsMine = plus.webview.getWebviewById('views/mine/mine.html').id;
 					all.forEach(function(v,k,arr){
-						if(v.id != index && v.id !=wsHome && v.id !=wsClassification && v.id != wsShoppingCart && v.id != wsMine){
+//						&& v.id !=wsClassification
+						if(v.id != index && v.id !=wsHome && v.id != wsShoppingCart && v.id != wsMine){
 							v.close();
 						}
 					})

@@ -122,11 +122,11 @@
 					if(iscl == 1){
 						return
 					}
-				var dtask = plus.downloader.createDownload(this.imgurls, {}, function(d, status){
+				var dtask = plus.downloader.createDownload(this.imgurls, {}, function(d,status){
 					// 下载完成
 					if(status == 200){ 
-//						mui.alert("Download success: " + d.filename);
-						//	alert( "Download success: " + d.filename );
+						//mui.alert("Download success: " + d.filename);
+						//alert( "Download success: " + d.filename );
 						plus.gallery.save(d.filename,function() {//保存到相册方法
 						mui.toast('已保存到手机相册');
 						}, function() {
@@ -338,13 +338,13 @@
 			//选择完确定
 			chooseSureBtn:function(){
 				if(!this.colorName){
-					mui.toast('请选择颜色');
+//					mui.toast('请选择颜色');
 					return false;
 				}else if(!this.mysizeName && this.specificationOrSize==0){
-					mui.toast('请选择商品尺码');
+//					mui.toast('请选择商品尺码');
 					return false;
 				}else if(!this.mysizeName && this.specificationOrSize==1){
-					mui.toast('请选择商品规格');
+//					mui.toast('请选择商品规格');
 					return false;
 				}else{
 //					plus.nativeUI.showWaiting();
@@ -469,6 +469,7 @@
 			$j('.btnarr').hide()
 			this.getUrlObj();
 			this.loadding();
+			console.log(this.name)
 			window.addEventListener('comDetail', function(event) {
 				app.loadding();
 			}, false);

@@ -1,11 +1,8 @@
-/*#my2048{
-	position: absolute;
-	top:1rem;
-}*/
 .title{
     font-size: 100px;
     font-family: Lobster,serif;
     margin: 30px;
+    color: #fd7196;
 }
 
 #game-body{

@@ -56,14 +56,15 @@
 										<dt><img src="../../img/mine/daishouhuo.png"/></dt>
 										<dd>待收货</dd>
 									</dl>
-									<dl @tap="turnTo('myOrder/myOrder','myOrder','4','1');">
-										<dt><img src="../../img/mine/yiwancheng.png"/></dt>
-										<dd>已完成</dd>
-									</dl>
 									<dl @tap="turnTo('address/address','address');">
 										<dt><img src="../../img/mine/wodedizhi.png"/></dt>
 										<dd>我的地址</dd>
 									</dl>
+									<dl @tap="turnTo('myticket','myticket');">
+										<dt><img src="../../img/mine/kaquan.png"/></dt>
+										<dd>我的卡券</dd>
+									</dl>
+									
 									<dl @tap="turnTo('accountSecurity/accountSecurity','accountSecurity')" class="bornone">
 										<dt><img src="../../img/mine/zhanghuyuanquan.png"/></dt>
 										<dd>账户与安全</dd>
@@ -136,15 +137,15 @@
 									<div class="top">
 										<h5>我的经营</h5>
 									</div>
-									<dl v-if="clerk == true" @tap="turnTo('shopGuide/customerList','customerList')">
+									<dl v-if="clerk == true" class="borbot" @tap="turnTo('shopGuide/customerList','customerList')">
 										<dt><img src="../../img/mine/kehuliebiao.png"/></dt>
 										<dd>客户列表</dd>
 									</dl>
-									<dl v-if="clerk == true" @tap="turnTo('myOrder/myOrder','myOrder','0','2')">
+									<dl v-if="clerk == true" class="borbot" @tap="turnTo('myOrder/myOrder','myOrder','0','2')">
 										<dt><img src="../../img/mine/kehudingdan.png"/></dt>
 										<dd>客户订单</dd>
 									</dl>
-									<dl v-if="clerk == true" @tap="turnTo('shopGuide/myCommission','myCommission')" class="bornone" >
+									<!--<dl v-if="clerk == true" @tap="turnTo('shopGuide/myCommission','myCommission')" class="bornone" >
 										<dt><img src="../../img/mine/wodexiaoshou.png"/></dt>
 										<dd>我的佣金</dd>
 									</dl>
@@ -155,10 +156,14 @@
 									<dl v-if="clerk == true" @tap="turnTo('shopGuide/cashAccountManagement','cashAccountManagement')" class="borbot">
 										<dt><img src="../../img/mine/tixianguanli.png"/></dt>
 										<dd>提现账户管理</dd>
-									</dl>
+									</dl>-->
 									<dl v-if="clerk == true"  class="borbot bornone" style="padding-top:.9rem">
 										<dd>敬请期待</dd>
 									</dl>
+								</div>
+								<div style="text-align: center;">
+									<p>Copyright&copy;2018</p>
+									<p>金牛区我就是要服装经营部&nbsp;版权所有</p>
 								</div>
 							</div>
 						</div>	

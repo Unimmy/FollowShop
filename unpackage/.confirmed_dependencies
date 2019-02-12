@@ -24,7 +24,11 @@
       "img/common/renzheng1.png",
       "img/common/main2.png",
       "lib/jquery/jquery-3.2.1.min.js",
-      "views/classification/classification.html"
+      "views/classification/classification.html",
+      "img/mine/game2.png",
+      "img/common/home-shi.png",
+      "img/common/my-shill.png",
+      "img/common/Cart-shi.png"
     ],
     "refer": [
       "views/homePage/homeIndex.html",
@@ -179,7 +183,8 @@
       "views/homePage/cityChoose.html",
       "views/shoppingCart/commodityDetails.html",
       "views/homePage/searchSearch.html",
-      "views/mine/setting.html"
+      "views/mine/setting.html",
+      "views/homePage/advertguid.html"
     ]
   },
   "views/loan/loanIndex.html": {
@@ -1756,7 +1761,9 @@
       "guidePage.html",
       "index.html"
     ],
-    "resources": []
+    "resources": [
+      "lib/mui/mui.min.js"
+    ]
   },
   "guidePage.html": {
     "refer": [
@@ -1782,9 +1789,13 @@
       "views/mine/myOrder/refundAndDelivery.html",
       "views/mine/shopGuide/commissionExpressive.html",
       "views/mine/shopGuide/cashAccountManagement.html",
-      "views/mine/myCoupon.html"
+      "views/mine/myCoupon.html",
+      "views/mine/myticket.html"
     ],
-    "resources": []
+    "resources": [
+      "css/mine/mine.css",
+      "css/common.css"
+    ]
   },
   "views/mine/setting.html": {
     "refer": [
@@ -1824,7 +1835,8 @@
     "refer": [
       "views/shoppingCart/pay.html",
       "views/mine/address/address.html",
-      "views/shoppingCart/shopCoupon.html"
+      "views/shoppingCart/shopCoupon.html",
+      "views/shoppingCart/paycard.html"
     ],
     "resources": []
   },
@@ -1833,7 +1845,10 @@
       "views/shoppingCart/shopSettlement.html",
       "views/shoppingCart/commodityDetails.html"
     ],
-    "resources": []
+    "resources": [
+      "css/shoppingCart/shoppingCart.css",
+      "css/common.css"
+    ]
   },
   "views/shoppingCart/pay.html": {
     "refer": [
@@ -1857,42 +1872,70 @@
   "views/homePage/homeList.html": {
     "refer": [
       "views/shoppingCart/commodityDetails.html"
-    ]
+    ],
+    "resources": []
   },
   "views/homePage/searchIndex.html": {
     "refer": [
       "views/shoppingCart/commodityDetails.html"
-    ]
+    ],
+    "resources": []
   },
   "views/mine/myCollection.html": {
     "refer": [
       "views/shoppingCart/commodityDetails.html"
-    ]
+    ],
+    "resources": []
   },
   "views/mine/shopGuide/myCommission.html": {
     "refer": [
       "views/mine/shopGuide/moneyList.html"
-    ]
+    ],
+    "resources": []
   },
   "views/mine/shopGuide/moneyList.html": {
     "refer": [
       "views/mine/shopGuide/searchList.html"
-    ]
+    ],
+    "resources": []
   },
   "views/mine/shopGuide/searchList.html": {
     "refer": [
       "views/mine/myOrder/orderDetail.html"
-    ]
+    ],
+    "resources": []
   },
   "views/mine/myOrder/orderDetail.html": {
     "refer": [
       "views/mine/myOrder/applyAfterSale.html",
       "views/shoppingCart/commodityDetails.html"
-    ]
+    ],
+    "resources": []
   },
   "views/mine/myOrder/exchangeGoods.html": {
     "refer": [
       "views/mine/myOrder/orderDetail.html"
+    ],
+    "resources": []
+  },
+  "views/homePage/advertguid.html": {
+    "refer": [
+      "views/shoppingCart/commodityDetails.html"
+    ]
+  },
+  "views/mine/myticket.html": {
+    "refer": [
+      "views/mine/ticketshare.html"
+    ]
+  },
+  "views/shoppingCart/paycard.html": {
+    "refer": [
+      "views/mine/myOrder/myOrder.html"
+    ]
+  },
+  "views/game/game.html": {
+    "resources": [
+      "css/common.css"
     ]
   }
 }

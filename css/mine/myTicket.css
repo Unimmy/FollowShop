@@ -1,0 +1,24 @@
+#header{
+	border-bottom:1px solid #E5E5E5 !important;
+}
+.contentDiv{
+	padding:0.2rem;
+	position:relative;
+}
+.contentDiv div{
+	position:relative;
+}
+.id{
+	position: absolute;
+	top:1.5rem;
+	right:-.5rem;
+	color:#FFFFFF;transform: rotate(90deg);
+}
+.noCard{
+	text-align: center;
+	background: transparent;
+}
+.noCard img{
+	width:20%;
+	height: 20%;
+}

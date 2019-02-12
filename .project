@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>XingRongTongApp</name>
+	<name>FollowShop</name>
 	<comment>Create By HBuilder</comment>
 	<projects>
 	</projects>
@@ -22,7 +22,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1499131715162</id>
+			<id>0</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -40,7 +40,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1499146826692</id>
+			<id>0</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -49,7 +49,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1499146826710</id>
+			<id>0</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -58,7 +58,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1511235216053</id>
+			<id>0</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -67,7 +67,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1528265391252</id>
+			<id>0</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -76,7 +76,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1528873062481</id>
+			<id>0</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -85,7 +85,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1541597445787</id>
+			<id>0</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -94,7 +94,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1541683021714</id>
+			<id>0</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -103,7 +103,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1541732670146</id>
+			<id>0</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -112,7 +112,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1543398353128</id>
+			<id>0</id>
 			<name></name>
 			<type>26</type>
 			<matcher>
@@ -121,7 +121,16 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1543401997785</id>
+			<id>0</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-node_modules</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>0</id>
 			<name></name>
 			<type>26</type>
 			<matcher>

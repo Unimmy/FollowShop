@@ -28,6 +28,11 @@
 			qufenCouPonId:'',		//立即支付和普通
 			isChooseModey:'2',		//选取配送方式，默认选快递到家
 			postFeePostFee:'',		//所有运费钱
+			cards:[],				//卡片
+			kp:'2',					//是否使用卡片，0：使用自定义卡片，1：使用默认卡片，2：不使用卡片
+			k_array:[],				//使用自定义卡片时，传入卡片id，一个id或多个id
+			message:'不使用卡片',		//显示怎么选择卡片	
+			page:'1'				//分页查询
 		},
 		methods: {
 			turnTo:function(name,id,data,isChoosePay){
@@ -199,7 +204,7 @@
 			},
 			//去支付
 			goPayBtn:function(){
-				if(this.orderId == ''){
+				 if(this.orderId == ''){
 //					console.log(this.modelId);
 //					console.log(this.addressId);
 					console.log(this.couponArrayId);
@@ -213,6 +218,8 @@
 						myaddressid:this.addressId,
 						numsize:this.infos[0].data[0].num,
 						couponArray:this.couponArrayId,
+						kp:this.kp,
+						k_array:this.k_array,
 						uname:localStorage.getItem('uname'),
 						UID:localStorage.getItem('uuid')
 					},function(r){
@@ -226,16 +233,6 @@
 								if(msg.status==200){
 									console.log(msg);
 									app.turnTo('pay','pay',msg.data,app.isChoosePay);
-//									NetUtil.ajax('/wpay/'+msg.data+'',{
-//										uname:localStorage.getItem('uname'),
-//										UID:localStorage.getItem('uuid')
-//									},function(data){
-//										if(data.status==200){
-//											console.log(data);
-//										}else{
-//											mui.alert(data.message);
-//										}
-//									})
 								}else{
 									mui.alert(r.message,function(){},'div');
 								}
@@ -293,10 +290,76 @@
 				localStorage.setItem('JsonArray',this.itemIdCoupon);
 				this.turnToAdd('shopCoupon','shopCoupon',numberMoney,data.onephone);
 			},
+			//显示优惠卡券
+			showCards:function(show){
+				if(show == 'cancle'){
+					$j(".bottomdiv").css("height","0rem")
+					$j(".bottomdivchild").css("display","none")
+						return
+					}
+				if(show == "ok"){
+					if(this.k_array.length<1){
+						mui.alert("请选择卡片！",function(){},'div')
+						return
+					}
+					$j(".bottomdiv").css("height","0rem")
+					$j(".bottomdivchild").css("display","none")
+					app.kp = 0
+					app.message = '使用自定义卡片'
+					return
+				}
+				if(app.message == '使用自定义卡片'){
+					$j(".bottomdiv").css("height","8rem")
+					$j(".bottomdivchild").css("display","block")
+					return
+				}
+				if(app.message == '不使用卡片'){
+					if(app.cards.length<1){
+						mui.alert('您没有相关卡片！',function(){},'div')
+						return
+					}
+				}
+				var btnArray = ['取消','确定']
+				mui.confirm("是否使用系统选择最优的卡片支付？",btnArray,function(e){
+					if(e.index==0){
+						$j(".bottomdiv").css("height","8rem")
+						$j(".bottomdivchild").css("display","block")
+						
+					}else{
+						app.kp = 1
+						app.message = '使用默认卡片'
+					}
+				},"div")
+				
+			},
+//			获取卡片ID
+			getcardID:function(cardid,index){
+//				console.log("下标："+index)
+//				console.log("图片下标："+$j(".img")[0])
+				if($j.inArray(cardid,this.k_array)==-1){
+					this.k_array.push(cardid)
+					$j(".img")[index].style.background="#ED7196"
+				}else{
+					var indexs = this.k_array.indexOf(cardid);
+					this.k_array.splice(indexs,1);
+					$j(".img")[index].style.background="transparent"
+//					console.log(this.k_array.legnth)
+				}
+			},
+			selectTickets:function(){
+				NetUtil.ajax("/Kb/applist",{
+					rows:100,
+					uname:localStorage.getItem('uname'),
+					UID:localStorage.getItem('uuid')
+				},function(r) {
+					app.cards =r.data;
+				})
+			}
 		},
 		created: function() {
 			this.getUrlObj();
 			this.loadding();
+			this.selectTickets()
 			window.addEventListener('changeRefresh', function(e){//执行刷新
 //			    location.reload();
 				app.distributionMode('2');
@@ -349,4 +412,4 @@
 			});
 		}
 	});
-}());
+}()); 

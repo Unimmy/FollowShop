@@ -23,22 +23,23 @@ var bestItem;
 
 //保存各个值对应的块的颜色
 var colors = {
-    2: "darkturquoise",
-    4: "darkturquoise",
-    8: "coral",
-    16: "coral",
-    32: "darkorange",
-    64: "darkorange",
-    128: "hotpink",
-    256: "hotpink",
-    512: "orange",
-    1024: "orange"
+    2: "#c3dc7e",
+    4: "#54cba1",
+    8: "#d75994",
+    16: "#5aa5d2",
+    32: "#9a0034",
+    64: "#70253c",
+    128: "#342963",
+    256: "#e6390f",
+    512: "#00935f",
+    1024: "#0f2997"
 };
 
 /**
  * 开始一局新的游戏
  */
 function startNewGame() {
+
     var keys = Object.keys(cellValues);
     for(var i = 0; i < keys.length; i++){
         cellValues[keys[i]].target.remove();
@@ -86,8 +87,8 @@ function dealKeyDownEvent() {
         console.log(event.which);
     });
 }
-
-$(function () {
+//初始化游戏界面
+$(function(){
     scoreItem = $("#score_value");
     bestItem = $("#best_value");
     $("#new_game").click(function () {
@@ -117,7 +118,7 @@ $(function () {
     //处理手机的触摸事件
     dealTouchEvent();
     startNewGame();
-});
+})
 
 /**
  * 左滑操作
@@ -291,7 +292,7 @@ function addNewCellTo(position, value) {
  *           负值 ==> 无效值（该位置上没有活动块）
  */
 function checkValue(position) {
-    console.log(cellValues);
+//  console.log(cellValues);
     if (cellValues[position] === undefined)
         return -1;
     return cellValues[position];
@@ -403,3 +404,4 @@ function ActiveBlock(value, target) {
     this.value = value;
     this.target = target;
 }
+

@@ -41,7 +41,7 @@
 			if (targetTab == activeTab) {
 				return false;
 			}
-			if(targetTab != 'views/homePage/homeIndex.html' && targetTab != 'views/game/game.html' && localStorage.memberId == '' || localStorage.memberId == undefined){
+			if(targetTab != 'views/homePage/homeIndex.html' && localStorage.memberId == '' || localStorage.memberId == undefined){
 				plus.webview.open('views/loginRegister/login.html?neet=1','login');
 				return false;
 			}

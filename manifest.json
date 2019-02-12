@@ -1,13 +1,14 @@
+
 {
 	"@platforms": [
 		"android",
 		"iPhone",
 		"iPad"
 	],
-	"id": "H587C53F1",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"id": "H56643235",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "Follow Shop",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "1.0.6",/*应用版本名称*/
+		"name": "1.0.8",/*应用版本名称*/
 		"code": "83"
 	},
 	"description": "",/*应用描述信息*/
@@ -133,8 +134,8 @@
 				},
 				"share": {
 					"weixin": {
-						"appid": "wx1152a02fb11a23a9",
-						"appsecret": "7cd330f13a11d0e2e5dbfe5583b97dcd",
+						"appid": "wxdbd106a90c7ba5ea",
+						"appsecret": "fe9c7dadd21a6747c9ba92e2b7a334d1",
 						"description": "微信分享"
 					},
 					"sina": {
@@ -151,8 +152,8 @@
 				"oauth": {
 					"weixin": {
 						"description": "微信登录授权",
-						"appid": "wx1152a02fb11a23a9",
-						"appsecret": "7cd330f13a11d0e2e5dbfe5583b97dcd"
+						"appid": "wxdbd106a90c7ba5ea",
+						"appsecret": "fe9c7dadd21a6747c9ba92e2b7a334d1"
 					}
 				},
 				"payment": {
@@ -162,7 +163,7 @@
 					},
 					"weixin": {
 						"description": "微信支付",
-						"appid": "wx1152a02fb11a23a9"
+						"appid": "wxdbd106a90c7ba5ea"
 					}
 				}
 			},
@@ -172,6 +173,7 @@
 				"password": "",/*iOS应用打包个人证书导入密码*/
 				"p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
 				"devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+				"urltypes":[ { "urlidentifier":"com.app.followshop", "urlschemes":["followshop"]}],
 				"frameworks": [],
 				"plistcmds": [
 					"Set :NSCameraUsageDescription 请允许打开相机,拍摄照片,以便于头像设置",
@@ -188,6 +190,7 @@
 				"keystore": "",/*Android应用打包使用的密钥库文件*/
 				"password": "",/*Android应用打包使用密钥库中证书的密码*/
 				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
+				"schemes":["followshop"],
 				"permissions": ["<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>","<uses-permission android:name=\"com.android.launcher.permission.UNINSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>","<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"com.android.launcher.permission.INSTALL_SHORTCUT\"/>","<uses-permission android:name=\"android.permission.SEND_SMS\"/>","<uses-permission android:name=\"android.permission.INTERNET\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>","<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"android.permission.WRITE_SMS\"/>","<uses-permission android:name=\"android.permission.READ_SMS\"/>"]
 			},
 			"orientation": [
@@ -286,7 +289,7 @@
 			"splash": false,
 			"push": false,
 			"spot": false
-		},"adid":"128743130906"
+		}
 	},
 	"dependencies": {
 		"pages": {
@@ -315,7 +318,11 @@
 					"img/common/renzheng1.png",
 					"img/common/main2.png",
 					"lib/jquery/jquery-3.2.1.min.js",
-					"views/classification/classification.html"
+					"views/classification/classification.html",
+					"img/mine/game2.png",
+					"img/common/home-shi.png",
+					"img/common/my-shill.png",
+					"img/common/Cart-shi.png"
 				],
 				"refer": [
 					"views/daidai/ddIndex.html",
@@ -467,7 +474,8 @@
 					"views/homePage/cityChoose.html",
 					"views/shoppingCart/commodityDetails.html",
 					"views/homePage/searchSearch.html",
-					"views/mine/setting.html"
+					"views/mine/setting.html",
+					"views/homePage/advertguid.html"
 				],
 				"priority": 0
 			},
@@ -2120,7 +2128,8 @@
 			},
 			"main.html": {
 				"resources": [
-					"views/homePage/homeIndex.html"
+					"views/homePage/homeIndex.html",
+					"lib/mui/mui.min.js"
 				],
 				"refer": [
 					"views/shoppingCart/shoppingCart.html",
@@ -2133,7 +2142,10 @@
 				"priority": 0
 			},
 			"views/mine/mine.html": {
-				"resources": [],
+				"resources": [
+					"css/mine/mine.css",
+					"css/common.css"
+				],
 				"refer": [
 					"views/mine/myOrder/myOrder.html",
 					"views/mine/setting.html",
@@ -2151,7 +2163,8 @@
 					"views/mine/myOrder/refundAndDelivery.html",
 					"views/mine/shopGuide/commissionExpressive.html",
 					"views/mine/shopGuide/cashAccountManagement.html",
-					"views/mine/myCoupon.html"
+					"views/mine/myCoupon.html",
+					"views/mine/myticket.html"
 				],
 				"priority": 0
 			},
@@ -2199,12 +2212,16 @@
 				"refer": [
 					"views/shoppingCart/pay.html",
 					"views/mine/address/address.html",
-					"views/shoppingCart/shopCoupon.html"
+					"views/shoppingCart/shopCoupon.html",
+					"views/shoppingCart/paycard.html"
 				],
 				"priority": 0
 			},
 			"views/shoppingCart/shoppingCart.html": {
-				"resources": [],
+				"resources": [
+					"css/shoppingCart/shoppingCart.css",
+					"css/common.css"
+				],
 				"refer": [
 					"views/shoppingCart/shopSettlement.html",
 					"views/shoppingCart/commodityDetails.html"
@@ -2288,6 +2305,34 @@
 				"refer": [
 					"views/mine/myOrder/orderDetail.html"
 				],
+				"priority": 0
+			},
+			"views/homePage/advertguid.html": {
+				"resources": [],
+				"refer": [
+					"views/shoppingCart/commodityDetails.html"
+				],
+				"priority": 0
+			},
+			"views/mine/myticket.html": {
+				"resources": [],
+				"refer": [
+					"views/mine/ticketshare.html"
+				],
+				"priority": 0
+			},
+			"views/shoppingCart/paycard.html": {
+				"resources": [],
+				"refer": [
+					"views/mine/myOrder/myOrder.html"
+				],
+				"priority": 0
+			},
+			"views/game/game.html": {
+				"resources": [
+					"css/common.css"
+				],
+				"refer": [],
 				"priority": 0
 			}
 		},
@@ -2429,5 +2474,5 @@
 				"lib/valid/Validform_v5.3.2/Validform_v5.3.2/demo/plugin/swfupload/upload.php"
 			]
 		}
-	}
+	},"fullscreen":false
 }
